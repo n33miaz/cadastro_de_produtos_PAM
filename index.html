@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <section class="formulario">
+        <label for="input_nome">Nome do Produto:</label>
+        <input type="text" id="input_nome" required>
+
+        <label for="input_preco">Preço:</label>
+        <input type="number" id="input_preco" required>
+
+        <label for="input_categoria">Categoria:</label>
+        <select id="input_categoria" required>
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Móveis">Móveis</option>
+            <option value="Vestuário">Vestuário</option>
+        </select>
+
+        <button onclick="cadastrarProduto()" id="botao_cadastrar">Cadastrar</button>
+        <button onclick="listarProdutos()" id="botao_listar" disabled>Listar</button>
+    </section>
+
+    <section class="filtro">
+        <label for="filtro_categoria">Filtrar por Categoria:</label>
+        <select id="filtro_categoria">
+            <option value="Todas">Todas</option>
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Móveis">Móveis</option>
+            <option value="Vestuário">Vestuário</option>
+        </select>
+        <button onclick="filtrarProdutos()">Filtrar</button>
+    </section>
+
+    <section id="lista"></section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
